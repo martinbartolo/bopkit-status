@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Bopkit Main Site",
+    "url": "https://www.bopkit.com",
+    "icon": "https://www.bopkit.com/favicon.ico",
+    "slug": "bopkit-main-site",
+    "status": "down",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 1249,
+    "timeDay": 1249,
+    "timeWeek": 1249,
+    "timeMonth": 1249,
+    "timeYear": 1249,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Bopkit Robots",
+    "url": "https://www.bopkit.com/robots.txt",
+    "icon": "https://icons.duckduckgo.com/ip3/www.bopkit.com.ico",
+    "slug": "bopkit-robots",
+    "status": "down",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 232,
+    "timeDay": 232,
+    "timeWeek": 232,
+    "timeMonth": 232,
+    "timeYear": 232,
+    "dailyMinutesDown": {}
+  }
+]
