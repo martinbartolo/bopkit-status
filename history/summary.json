@@ -5,17 +5,19 @@
     "icon": "https://www.bopkit.com/favicon.ico",
     "slug": "bopkit-main-site",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "99.98%",
+    "uptimeDay": "99.98%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.98%",
     "time": 989,
     "timeDay": 989,
     "timeWeek": 989,
     "timeMonth": 989,
     "timeYear": 989,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-09": 0
+    }
   },
   {
     "name": "Bopkit Robots",
@@ -23,16 +25,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/www.bopkit.com.ico",
     "slug": "bopkit-robots",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "99.99%",
+    "uptimeDay": "99.99%",
+    "uptimeWeek": "99.99%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
     "time": 97,
     "timeDay": 97,
     "timeWeek": 97,
     "timeMonth": 97,
     "timeYear": 97,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-09": 0
+    }
   }
 ]
