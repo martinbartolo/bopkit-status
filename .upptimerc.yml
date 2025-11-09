@@ -2,13 +2,12 @@
 owner: martinbartolo
 repo: bopkit-status
 
-# Sites to monitor (we'll use placeholder URLs for now)
+# Sites to monitor
 sites:
   - name: Bopkit Main Site
     url: https://www.bopkit.com
     icon: https://www.bopkit.com/favicon.ico
     maxResponseTime: 3000
-
   - name: Bopkit Robots
     url: https://www.bopkit.com/robots.txt
     maxResponseTime: 2000
@@ -26,11 +25,597 @@ status-website:
   # Theme
   theme: dark
 
-  # Custom styling
+  # Custom styling - Comprehensive design matching Bopkit's design system
   customHeadHtml: |
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-      body { 
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      :root {
+        /* Bopkit Color Palette - Light Mode */
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --border: 214.3 31.8% 70.4%;
+        --input: 214.3 31.8% 70.4%;
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --warning: 40 95% 45%;
+        --warning-foreground: 48 100% 97%;
+        --success: 120 71% 35%;
+        --success-foreground: 144 100% 97%;
+        --info: 210 95% 45%;
+        --info-foreground: 210 100% 97%;
+        --ring: 222.2 84% 4.9%;
+        --radius: 0.75rem;
+        
+        /* Bopkit Brand Colors */
+        --bopkit-accent: 216 100% 48%; /* #0062F5 in HSL */
+        --bopkit-accent-hover: 216 100% 42%;
+        --bopkit-accent-foreground: 0 0% 100%;
+        
+        /* Chart colors from Bopkit */
+        --chart-1: 222 85% 56%;
+        --chart-2: 195 75% 52%;
+        --chart-3: 185 70% 58%;
+        --chart-4: 25 85% 58%;
+        --chart-5: 145 65% 48%;
+        
+        /* Status colors */
+        --status-up: 120 71% 35%;
+        --status-up-foreground: 144 100% 97%;
+        --status-degraded: 40 95% 45%;
+        --status-degraded-foreground: 48 100% 97%;
+        --status-down: 0 84.2% 60.2%;
+        --status-down-foreground: 210 40% 98%;
+      }
+      
+      .dark,
+      [data-theme="dark"] {
+        /* Bopkit Dark Mode Palette */
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --ring: 212.7 26.8% 83.9%;
+        
+        /* Bopkit Brand Colors (slightly adjusted for dark mode) */
+        --bopkit-accent: 216 100% 55%;
+        --bopkit-accent-hover: 216 100% 60%;
+        
+        /* Chart colors for dark mode */
+        --chart-1: 222 85% 62%;
+        --chart-2: 195 75% 58%;
+        --chart-3: 185 70% 64%;
+        --chart-4: 25 85% 64%;
+        --chart-5: 145 65% 54%;
+      }
+      
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+      
+      body {
+        font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Header Styling */
+      header {
+        background-color: hsl(var(--card));
+        border-bottom: 1px solid hsl(var(--border));
+        padding: 1.5rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+        background-color: hsl(var(--background) / 0.95);
+        transition: all 0.3s ease;
+      }
+      
+      header .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: hsl(var(--foreground));
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      
+      header img {
+        height: 32px;
+        width: 32px;
+        border-radius: var(--radius);
+      }
+      
+      /* Navigation */
+      nav {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      
+      nav a {
+        color: hsl(var(--muted-foreground));
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: calc(var(--radius) - 2px);
+        font-weight: 500;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+      }
+      
+      nav a:hover {
+        color: hsl(var(--foreground));
+        background-color: hsl(var(--accent));
+      }
+      
+      nav a:active {
+        transform: scale(0.98);
+      }
+      
+      /* Main Content */
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        min-height: calc(100vh - 200px);
+      }
+      
+      /* Intro Section */
+      .intro {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding: 2rem 0;
+      }
+      
+      .intro h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: hsl(var(--foreground));
+        line-height: 1.2;
+      }
+      
+      .intro p {
+        font-size: 1.125rem;
+        color: hsl(var(--muted-foreground));
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+      
+      /* Status Cards */
+      .status {
+        background-color: hsl(var(--card));
+        border: 1px solid hsl(var(--border));
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      }
+      
+      .status:hover {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        transform: translateY(-2px);
+      }
+      
+      .status h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: hsl(var(--foreground));
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      
+      .status img.icon {
+        height: 24px;
+        width: 24px;
+        border-radius: calc(var(--radius) - 4px);
+      }
+      
+      /* Status Badges */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        border-radius: calc(var(--radius) - 4px);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+        gap: 0.5rem;
+      }
+      
+      .badge::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      
+      .badge.up {
+        background-color: hsl(var(--status-up) / 0.15);
+        color: hsl(var(--status-up));
+      }
+      
+      .badge.up::before {
+        background-color: hsl(var(--status-up));
+      }
+      
+      .badge.degraded {
+        background-color: hsl(var(--status-degraded) / 0.15);
+        color: hsl(var(--status-degraded));
+      }
+      
+      .badge.degraded::before {
+        background-color: hsl(var(--status-degraded));
+      }
+      
+      .badge.down {
+        background-color: hsl(var(--status-down) / 0.15);
+        color: hsl(var(--status-down));
+      }
+      
+      .badge.down::before {
+        background-color: hsl(var(--status-down));
+        animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      /* Metrics */
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      
+      .metric {
+        background-color: hsl(var(--muted));
+        padding: 1rem;
+        border-radius: calc(var(--radius) - 2px);
+        transition: all 0.2s ease;
+      }
+      
+      .metric:hover {
+        background-color: hsl(var(--accent));
+      }
+      
+      .metric-label {
+        font-size: 0.875rem;
+        color: hsl(var(--muted-foreground));
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+      }
+      
+      .metric-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: hsl(var(--foreground));
+      }
+      
+      /* Response Time Graph */
+      .graph {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background-color: hsl(var(--muted) / 0.5);
+        border-radius: calc(var(--radius) - 2px);
+        overflow-x: auto;
+      }
+      
+      .graph img {
+        width: 100%;
+        height: auto;
+        border-radius: calc(var(--radius) - 4px);
+      }
+      
+      /* History Timeline */
+      .history {
+        margin-top: 2rem;
+      }
+      
+      .history h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: hsl(var(--foreground));
+      }
+      
+      .history-item {
+        padding: 1rem;
+        border-left: 3px solid hsl(var(--bopkit-accent));
+        margin-bottom: 1rem;
+        background-color: hsl(var(--muted) / 0.5);
+        border-radius: 0 calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0;
+      }
+      
+      .history-item time {
+        display: block;
+        font-size: 0.875rem;
+        color: hsl(var(--muted-foreground));
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+      
+      /* Buttons */
+      button,
+      .button,
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.625rem 1.25rem;
+        border-radius: calc(var(--radius) - 2px);
+        font-weight: 600;
+        font-size: 0.875rem;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-family: inherit;
+      }
+      
+      button:disabled,
+      .button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      
+      .button-primary {
+        background-color: hsl(var(--bopkit-accent));
+        color: hsl(var(--bopkit-accent-foreground));
+      }
+      
+      .button-primary:hover:not(:disabled) {
+        background-color: hsl(var(--bopkit-accent-hover));
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2);
+      }
+      
+      .button-primary:active:not(:disabled) {
+        transform: translateY(0);
+      }
+      
+      .button-secondary {
+        background-color: hsl(var(--secondary));
+        color: hsl(var(--secondary-foreground));
+        border: 1px solid hsl(var(--border));
+      }
+      
+      .button-secondary:hover:not(:disabled) {
+        background-color: hsl(var(--accent));
+      }
+      
+      /* Footer */
+      footer {
+        background-color: hsl(var(--card));
+        border-top: 1px solid hsl(var(--border));
+        padding: 2rem 0;
+        margin-top: 4rem;
+      }
+      
+      footer .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        text-align: center;
+      }
+      
+      footer p {
+        color: hsl(var(--muted-foreground));
+        font-size: 0.875rem;
+      }
+      
+      footer a {
+        color: hsl(var(--bopkit-accent));
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+      
+      footer a:hover {
+        color: hsl(var(--bopkit-accent-hover));
+        text-decoration: underline;
+      }
+      
+      /* Live Indicator */
+      .live-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: hsl(var(--status-up) / 0.1);
+        border: 1px solid hsl(var(--status-up) / 0.3);
+        border-radius: var(--radius);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: hsl(var(--status-up));
+      }
+      
+      .live-indicator::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: hsl(var(--status-up));
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      /* Uptime Bar */
+      .uptime-bar {
+        display: flex;
+        height: 40px;
+        border-radius: calc(var(--radius) - 2px);
+        overflow: hidden;
+        margin-top: 1rem;
+        border: 1px solid hsl(var(--border));
+      }
+      
+      .uptime-day {
+        flex: 1;
+        transition: all 0.2s ease;
+      }
+      
+      .uptime-day.up {
+        background-color: hsl(var(--status-up));
+      }
+      
+      .uptime-day.degraded {
+        background-color: hsl(var(--status-degraded));
+      }
+      
+      .uptime-day.down {
+        background-color: hsl(var(--status-down));
+      }
+      
+      .uptime-day:hover {
+        opacity: 0.8;
+        transform: scaleY(1.1);
+      }
+      
+      /* Loading Animation */
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+      
+      .loading {
+        animation: shimmer 2s infinite;
+        background: linear-gradient(
+          to right,
+          hsl(var(--muted)) 0%,
+          hsl(var(--accent)) 50%,
+          hsl(var(--muted)) 100%
+        );
+        background-size: 1000px 100%;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.25rem;
+        }
+        
+        .intro h1 {
+          font-size: 2rem;
+        }
+        
+        .intro p {
+          font-size: 1rem;
+        }
+        
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+        
+        nav {
+          width: 100%;
+          justify-content: center;
+        }
+        
+        main {
+          padding: 2rem 1rem;
+        }
+      }
+      
+      /* Accessibility */
+      *:focus-visible {
+        outline: 2px solid hsl(var(--ring));
+        outline-offset: 2px;
+      }
+      
+      /* Smooth transitions for theme switching */
+      * {
+        transition-property: background-color, border-color, color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      
+      /* Print Styles */
+      @media print {
+        header,
+        nav,
+        footer {
+          display: none;
+        }
+        
+        main {
+          max-width: 100%;
+        }
+        
+        .status {
+          break-inside: avoid;
+        }
       }
     </style>
 
@@ -46,9 +631,21 @@ status-website:
   # Meta tags
   metaTags:
     - name: description
-      content: Real-time status monitoring for Bopkit services
+      content: Real-time status monitoring for Bopkit services. Check here for current system status and incident history.
     - property: og:title
       content: Bopkit Service Status
+    - property: og:description
+      content: Real-time monitoring of all Bopkit services
+    - property: og:type
+      content: website
+    - property: og:image
+      content: https://www.bopkit.com/favicon.ico
+    - name: twitter:card
+      content: summary
+    - name: twitter:title
+      content: Bopkit Service Status
+    - name: twitter:description
+      content: Real-time monitoring of all Bopkit services
 
   # Footer
   footer: © 2025 Bopkit. All rights reserved.
