@@ -1,36 +1,83 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Repository information
+owner: martinbartolo
+repo: bopkit-status
 
+# Sites to monitor (we'll use placeholder URLs for now)
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: Bopkit Main Site
+    url: https://www.bopkit.com
+    icon: https://www.bopkit.com/favicon.ico
+    maxResponseTime: 3000
 
+  - name: Bopkit Robots
+    url: https://www.bopkit.com/robots.txt
+    maxResponseTime: 2000
+
+# Status website configuration
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  # Basic configuration
+  baseUrl: /
+  cname: status.bopkit.com
+  logoUrl: https://www.bopkit.com/favicon.ico
+  name: Bopkit Status
+  introTitle: "**Bopkit** Service Status"
+  introMessage: Real-time monitoring of all Bopkit services. Check here for current system status and incident history.
+
+  # Theme
+  theme: dark
+
+  # Custom styling
+  customHeadHtml: |
+    <style>
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+    </style>
+
+  # Navigation
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Bopkit
+      href: https://www.bopkit.com
+    - title: Support
+      href: https://www.bopkit.com/support
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+  # Meta tags
+  metaTags:
+    - name: description
+      content: Real-time status monitoring for Bopkit services
+    - property: og:title
+      content: Bopkit Service Status
+
+  # Footer
+  footer: © 2025 Bopkit. All rights reserved.
+
+# Issue assignment (for email notifications)
+assignees:
+  - martinbartolo
+
+# Commit messages
+commitMessages:
+  readmeContent: ":pencil: Update status summary"
+  summaryJson: ":card_file_box: Update status summary [skip ci]"
+  statusChange: "$EMOJI $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms)"
+  graphsUpdate: ":bento: Update graphs [skip ci]"
+
+# Workflow schedule
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+  uptime: "*/5 * * * *"
+
+# User agent
+user-agent: bopkit-status-monitor
+
+# Skip some updates for cleaner repo
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
+skipHomepageUpdate: true
