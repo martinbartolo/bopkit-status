@@ -1,140 +1,68 @@
 /* Bopkit Status Page Custom Theme */
 
 :root {
-  /* Base colors from Bopkit theme */
-  --body-background-color: #001716;
-  --body-text-color: #f0ffff;
-  --card-background-color: #002b29;
-  --nav-background-color: #002b29;
-  --nav-border-bottom-color: #015450;
-  --nav-current-border-bottom-color: #1abc9c;
-  --card-border-color: #015450;
-  
+  /* Base colors from app theme (light) */
+  --body-background-color: hsl(0 0% 100%);
+  --body-text-color: hsl(222.2 84% 4.9%);
+  --card-background-color: hsl(0 0% 100%);
+  --nav-background-color: hsl(0 0% 100%);
+  --nav-border-bottom-color: hsl(214.3 31.8% 70.4%);
+  --nav-current-border-bottom-color: hsl(222.2 47.4% 11.2%);
+  --card-border-color: hsl(214.3 31.8% 70.4%);
+
   /* Status colors */
-  --down-border-left-color: #eb3b5a;
-  --down-background-color: #6b1020;
-  --degraded-border-left-color: #f7b731;
-  --up-border-left-color: #20bf6b;
-  
+  --down-border-left-color: hsl(0 84.2% 60.2%);
+  --down-background-color: hsl(0 84.2% 96%);
+  --degraded-border-left-color: hsl(40 95% 45%);
+  --up-border-left-color: hsl(120 71% 35%);
+
   /* Tag/Badge colors */
-  --tag-color: #002b29;
-  --tag-up-background-color: #20bf6b;
-  --tag-down-background-color: #eb3b5a;
-  --tag-degraded-background-color: #f7b731;
-  
+  --tag-color: hsl(210 40% 98%);
+  --tag-up-background-color: hsl(120 71% 35%);
+  --tag-down-background-color: hsl(0 84.2% 60.2%);
+  --tag-degraded-background-color: hsl(40 95% 45%);
+
   /* Interactive elements */
-  --change-background-color: #f7b731;
-  --error-button-border-color: #1a46ad;
-  --error-button-background-color: #3867d6;
-  --error-button-color: #ffffff;
-  --submit-button-border-color: #1a46ad;
-  --submit-button-background-color: #3867d6;
-  --submit-button-color: #ffffff;
-  
+  --change-background-color: hsl(40 95% 45%);
+  --error-button-border-color: hsl(0 84.2% 60.2%);
+  --error-button-background-color: hsl(0 84.2% 60.2%);
+  --error-button-color: hsl(210 40% 98%);
+  --submit-button-border-color: hsl(222.2 47.4% 11.2%);
+  --submit-button-background-color: hsl(222.2 47.4% 11.2%);
+  --submit-button-color: hsl(210 40% 98%);
+
   /* Graph settings */
   --graph-opacity: 1;
   --graph-filter: none;
 }
 
-/* Apply theme colors */
-body {
-  background-color: var(--body-background-color);
+/* Hide the default Upptime header/navbar */
+header,
+nav[role="navigation"],
+.navbar,
+.App-nav {
+  display: none !important;
+}
+
+/* Minimal top bar (customBodyHtml) */
+#bopkit-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--body-background-color);
+  border-bottom: 1px solid var(--card-border-color);
+}
+
+#bopkit-topbar a {
   color: var(--body-text-color);
-  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Cards */
-.status, .card {
-  background-color: var(--card-background-color);
-  border: 1px solid var(--card-border-color);
+#bopkit-topbar a:hover {
+  text-decoration: underline;
 }
-
-/* Navigation */
-nav, header nav {
-  background-color: var(--nav-background-color);
-  border-bottom: 1px solid var(--nav-border-bottom-color);
-}
-
-nav a.active, nav a[aria-current="page"] {
-  border-bottom-color: var(--nav-current-border-bottom-color);
-}
-
-/* Status indicators */
-.status.up, .badge.up {
-  border-left: 4px solid var(--up-border-left-color);
-}
-
-.status.down, .badge.down {
-  border-left: 4px solid var(--down-border-left-color);
-  background-color: var(--down-background-color);
-}
-
-.status.degraded, .badge.degraded {
-  border-left: 4px solid var(--degraded-border-left-color);
-}
-
-/* Tags/Badges */
-.tag, .badge {
-  color: var(--tag-color);
-}
-
-.tag.up, .badge.up {
-  background-color: var(--tag-up-background-color);
-}
-
-.tag.down, .badge.down {
-  background-color: var(--tag-down-background-color);
-}
-
-.tag.degraded, .badge.degraded {
-  background-color: var(--tag-degraded-background-color);
-}
-
-/* Buttons */
-button[type="submit"], .submit-button {
-  background-color: var(--submit-button-background-color);
-  border: 1px solid var(--submit-button-border-color);
-  color: var(--submit-button-color);
-}
-
-.error-button {
-  background-color: var(--error-button-background-color);
-  border: 1px solid var(--error-button-border-color);
-  color: var(--error-button-color);
-}
-
-/* Change indicators */
-.change {
-  background-color: var(--change-background-color);
-}
-
-/* Graphs */
-.graph, .graph img {
-  opacity: var(--graph-opacity);
-  filter: var(--graph-filter);
-}
-
-/* Uptime bars */
-.uptime-day.up {
-  background-color: var(--tag-up-background-color);
-}
-
-.uptime-day.down {
-  background-color: var(--tag-down-background-color);
-}
-
-.uptime-day.degraded {
-  background-color: var(--tag-degraded-background-color);
-}
-
-/* Links */
-a {
-  color: var(--nav-current-border-bottom-color);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
