@@ -18,7 +18,7 @@ status-website:
   favicon: https://www.bopkit.com/favicon.ico
   introTitle: "**Bopkit** Service Status"
   introMessage: Real-time monitoring of all Bopkit services. Check here for current system status and incident history.
-  theme: dark
+  themeUrl: /assets/status-theme.css
 
   links:
     - rel: preconnect
@@ -28,22 +28,22 @@ status-website:
       crossorigin: true
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap
-    - rel: stylesheet
-      href: /assets/status-theme.css
 
-  navbar:
-    - title: Status
-      href: /
-    - title: Bopkit
-      href: https://www.bopkit.com
-    - title: Support
-      href: https://www.bopkit.com/support
+  customBodyHtml: |
+    <div id="bopkit-topbar" role="navigation" aria-label="Bopkit links">
+      <a href="https://www.bopkit.com">Bopkit Home</a>
+      <a href="https://www.bopkit.com/support">Support</a>
+    </div>
+
+  navbar: []
 
   metaTags:
+    - name: "color-scheme"
+      content: "light dark"
     - name: description
       content: Real-time status monitoring for Bopkit services. Check here for current system status and incident history.
     - name: theme-color
-      content: "#001716"
+      content: "#ffffff"
     - property: og:title
       content: Bopkit Service Status
     - property: og:description
@@ -54,15 +54,6 @@ status-website:
       content: https://www.bopkit.com/favicon.ico
     - name: twitter:card
       content: summary_large_image
-    - name: twitter:title
-      content: Bopkit Service Status
-    - name: twitter:description
-      content: Real-time monitoring of all Bopkit services
-
-  footer: "© 2025 Bopkit. All rights reserved."
-
-  i18n:
-    footer: "© 2025 Bopkit. All rights reserved. This page is [open source]($REPO), powered by [Upptime](https://upptime.js.org)"
 
 assignees:
   - martinbartolo
@@ -72,3 +63,6 @@ user-agent: bopkit-status-monitor
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
 skipHomepageUpdate: true
+
+i18n:
+  footer: "© 2025 Bopkit. All rights reserved. This page is [open source](https://github.com/martinbartolo/bopkit-status), powered by [Upptime](https://upptime.js.org)"
