@@ -45,30 +45,40 @@ status-website:
         --ring: 222.2 84% 4.9%;
         --radius: 0.75rem;
 
+        /* Sidebar colors (light) */
+        --sidebar: 0 0% 100%;
+        --sidebar-foreground: 222.2 84% 4.9%;
+        --sidebar-primary: 222.2 47.4% 11.2%;
+        --sidebar-primary-foreground: 210 40% 98%;
+        --sidebar-accent: 210 40% 96.1%;
+        --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+        --sidebar-border: 214.3 31.8% 70.4%;
+        --sidebar-ring: 222.2 84% 4.9%;
+
         /* Brand */
         --bopkit-accent: 216 100% 48%; /* #0062F5 */
         --bopkit-accent-hover: 216 100% 55%;
         --bopkit-accent-foreground: 0 0% 100%;
 
-        /* Status colors */
-        --success: 120 71% 35%;
-        --success-foreground: 144 100% 97%;
-        --warning: 40 95% 45%;
-        --warning-foreground: 48 100% 97%;
+        /* Status colors - used in both light and dark modes */
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
+        --warning: 40 95% 45%;
+        --warning-foreground: 48 100% 97%;
+        --success: 120 71% 35%;
+        --success-foreground: 144 100% 97%;
         --info: 210 95% 45%;
         --info-foreground: 210 100% 97%;
 
-        /* Charts (light) */
-        --chart-1: 222 85% 56%;
-        --chart-2: 195 75% 52%;
-        --chart-3: 185 70% 58%;
-        --chart-4: 25 85% 58%;
-        --chart-5: 145 65% 48%;
-        --chart-6: 350 70% 62%;
-        --chart-7: 260 55% 60%;
-        --chart-8: 220 15% 65%;
+        /* Charts (light) - Brand blue (primary) palette */
+        --chart-1: 222 85% 56%; /* Brand blue (primary) */
+        --chart-2: 195 75% 52%; /* Teal blue (cart accent) */
+        --chart-3: 185 70% 58%; /* Turquoise (cart highlight) */
+        --chart-4: 25 85% 58%; /* Warm orange (cart CTA) */
+        --chart-5: 145 65% 48%; /* Fresh mint (cart success) */
+        --chart-6: 350 70% 62%; /* Coral pink (cart energy) */
+        --chart-7: 260 55% 60%; /* Soft purple (cart contrast) */
+        --chart-8: 220 15% 65%; /* Warm gray (cart neutral) */
 
         /* Status badges mapping */
         --status-up: var(--success);
@@ -82,6 +92,7 @@ status-website:
       }
 
       .dark, [data-theme="dark"] {
+        /* Dark mode colors */
         --background: 222.2 84% 4.9%;
         --foreground: 210 40% 98%;
         --muted: 217.2 32.6% 17.5%;
@@ -100,7 +111,17 @@ status-website:
         --accent-foreground: 210 40% 98%;
         --ring: 212.7 26.8% 83.9%;
 
-        /* Charts (dark) */
+        /* Sidebar colors (dark) */
+        --sidebar: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+
+        /* Charts (dark mode palette) */
         --chart-1: 222 85% 62%;
         --chart-2: 195 75% 58%;
         --chart-3: 185 70% 64%;
@@ -112,8 +133,19 @@ status-website:
       }
 
       /* Global reset + typography */
-      *, *::before, *::after { box-sizing: border-box; }
-      html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+      *, *::before, *::after { 
+        box-sizing: border-box; 
+      }
+      * {
+        border-color: hsl(var(--border));
+        outline-color: hsl(var(--ring) / 0.5);
+      }
+      html { 
+        scroll-behavior: smooth; 
+        scroll-padding-top: 5rem;
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height - adjusts for mobile address bars */
+      }
       body {
         font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
         background-color: hsl(var(--background));
@@ -123,6 +155,13 @@ status-website:
         -moz-osx-font-smoothing: grayscale;
         transition: background-color 0.3s ease, color 0.3s ease;
         min-height: 100vh;
+        min-height: 100dvh;
+      }
+      button, [role="button"] {
+        cursor: pointer;
+      }
+      button:not([disabled]), [role="button"]:not([disabled]) {
+        cursor: pointer;
       }
 
       h1,h2,h3,h4,h5,h6 { color: hsl(var(--foreground)); font-weight: 800; line-height: 1.2; }
@@ -338,6 +377,443 @@ status-website:
         transition-property: background-color, border-color, color, fill, stroke, box-shadow, transform;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
+      }
+
+      /* Additional theme utilities */
+      .text-balance {
+        text-wrap: balance;
+      }
+
+      /* Ensure proper text rendering */
+      body, h1, h2, h3, h4, h5, h6, p, a, span, div {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Fix for any potential text overflow issues */
+      .intro h1, header h1 {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+
+      /* ========================================
+         UPPTIME OVERRIDE SECTION
+         Force all Upptime defaults to use theme colors
+         ======================================== */
+
+      /* Override Upptime badge colors */
+      .badge.up, .badge.operational, .badge[data-status="up"] {
+        background-color: hsl(var(--success) / 0.15) !important;
+        color: hsl(var(--success)) !important;
+        border: 1px solid hsl(var(--success) / 0.3) !important;
+      }
+
+      .badge.degraded, .badge[data-status="degraded"] {
+        background-color: hsl(var(--warning) / 0.15) !important;
+        color: hsl(var(--warning)) !important;
+        border: 1px solid hsl(var(--warning) / 0.3) !important;
+      }
+
+      .badge.down, .badge[data-status="down"] {
+        background-color: hsl(var(--destructive) / 0.15) !important;
+        color: hsl(var(--destructive)) !important;
+        border: 1px solid hsl(var(--destructive) / 0.3) !important;
+      }
+
+      .badge.unknown, .badge[data-status="unknown"] {
+        background-color: hsl(var(--info) / 0.15) !important;
+        color: hsl(var(--info)) !important;
+        border: 1px solid hsl(var(--info) / 0.3) !important;
+      }
+
+      /* Override Upptime uptime bar colors */
+      .uptime-day[data-status="up"], .day.up {
+        background-color: hsl(var(--success)) !important;
+      }
+
+      .uptime-day[data-status="degraded"], .day.degraded {
+        background-color: hsl(var(--warning)) !important;
+      }
+
+      .uptime-day[data-status="down"], .day.down {
+        background-color: hsl(var(--destructive)) !important;
+      }
+
+      .uptime-day[data-status="unknown"], .day.unknown {
+        background-color: hsl(var(--muted)) !important;
+      }
+
+      /* Override percentage displays */
+      .percentage.up, .percentage[data-status="up"] {
+        color: hsl(var(--success)) !important;
+      }
+
+      .percentage.degraded, .percentage[data-status="degraded"] {
+        color: hsl(var(--warning)) !important;
+      }
+
+      .percentage.down, .percentage[data-status="down"] {
+        color: hsl(var(--destructive)) !important;
+      }
+
+      /* Override status indicators and dots */
+      .status-indicator, .status-dot {
+        background-color: hsl(var(--success)) !important;
+      }
+
+      .status-indicator.degraded, .status-dot.degraded {
+        background-color: hsl(var(--warning)) !important;
+      }
+
+      .status-indicator.down, .status-dot.down {
+        background-color: hsl(var(--destructive)) !important;
+      }
+
+      /* Override graph/chart backgrounds */
+      .graph-container, .chart-container {
+        background-color: hsl(var(--muted) / 0.3) !important;
+      }
+
+      /* Override timeline elements */
+      .timeline-item::before, .history-item::before {
+        background-color: hsl(var(--bopkit-accent)) !important;
+      }
+
+      /* Override progress bars */
+      .progress, .progress-bar {
+        background-color: hsl(var(--muted)) !important;
+      }
+
+      .progress-fill, .progress-bar-fill {
+        background-color: hsl(var(--bopkit-accent)) !important;
+      }
+
+      /* Override all link colors */
+      a, a:link, a:visited {
+        color: hsl(var(--bopkit-accent)) !important;
+      }
+
+      a:hover, a:focus {
+        color: hsl(var(--bopkit-accent-hover)) !important;
+      }
+
+      /* Override summary text colors */
+      .summary-status, .status-text {
+        color: hsl(var(--foreground)) !important;
+      }
+
+      /* Override metric values */
+      .metric-value, .stat-value {
+        color: hsl(var(--foreground)) !important;
+        font-weight: 800 !important;
+      }
+
+      /* Override response time displays */
+      .response-time, .latency {
+        color: hsl(var(--muted-foreground)) !important;
+      }
+
+      /* Override any remaining default green/red/yellow from Upptime */
+      [style*="color: green"], [style*="background: green"] {
+        color: hsl(var(--success)) !important;
+        background-color: hsl(var(--success) / 0.15) !important;
+      }
+
+      [style*="color: red"], [style*="background: red"] {
+        color: hsl(var(--destructive)) !important;
+        background-color: hsl(var(--destructive) / 0.15) !important;
+      }
+
+      [style*="color: yellow"], [style*="background: yellow"] {
+        color: hsl(var(--warning)) !important;
+        background-color: hsl(var(--warning) / 0.15) !important;
+      }
+
+      /* Override SVG colors */
+      svg path, svg circle, svg rect {
+        fill: currentColor;
+      }
+
+      svg[data-status="up"] path,
+      svg[data-status="up"] circle {
+        fill: hsl(var(--success)) !important;
+      }
+
+      svg[data-status="degraded"] path,
+      svg[data-status="degraded"] circle {
+        fill: hsl(var(--warning)) !important;
+      }
+
+      svg[data-status="down"] path,
+      svg[data-status="down"] circle {
+        fill: hsl(var(--destructive)) !important;
+      }
+
+      /* Override table row hover */
+      tr:hover, tbody tr:hover {
+        background-color: hsl(var(--accent)) !important;
+      }
+
+      /* Override any hardcoded background colors */
+      .bg-green, .bg-success {
+        background-color: hsl(var(--success) / 0.15) !important;
+      }
+
+      .bg-red, .bg-danger, .bg-error {
+        background-color: hsl(var(--destructive) / 0.15) !important;
+      }
+
+      .bg-yellow, .bg-warning {
+        background-color: hsl(var(--warning) / 0.15) !important;
+      }
+
+      /* Override text colors */
+      .text-green, .text-success {
+        color: hsl(var(--success)) !important;
+      }
+
+      .text-red, .text-danger, .text-error {
+        color: hsl(var(--destructive)) !important;
+      }
+
+      .text-yellow, .text-warning {
+        color: hsl(var(--warning)) !important;
+      }
+
+      /* Override Upptime's default container backgrounds */
+      .container, .wrapper, .content {
+        background-color: transparent !important;
+      }
+
+      /* Override incident boxes */
+      .incident, .incident-box, .alert {
+        background-color: hsl(var(--card)) !important;
+        border-color: hsl(var(--border)) !important;
+      }
+
+      .incident.warning, .alert.warning {
+        border-left-color: hsl(var(--warning)) !important;
+        background-color: hsl(var(--warning) / 0.05) !important;
+      }
+
+      .incident.error, .alert.error, .incident.down {
+        border-left-color: hsl(var(--destructive)) !important;
+        background-color: hsl(var(--destructive) / 0.05) !important;
+      }
+
+      /* Override tags and labels */
+      .tag, .label {
+        background-color: hsl(var(--muted)) !important;
+        color: hsl(var(--foreground)) !important;
+        border: 1px solid hsl(var(--border)) !important;
+      }
+
+      /* Override code blocks */
+      code, pre, .code {
+        background-color: hsl(var(--muted)) !important;
+        color: hsl(var(--foreground)) !important;
+        border-color: hsl(var(--border)) !important;
+      }
+
+      /* Override any default blue links */
+      [style*="color: blue"], [style*="color: #00"] {
+        color: hsl(var(--bopkit-accent)) !important;
+      }
+
+      /* Override loading states */
+      .loading, .skeleton {
+        background: linear-gradient(to right, hsl(var(--muted)) 0%, hsl(var(--accent)) 50%, hsl(var(--muted)) 100%) !important;
+      }
+
+      /* Override tooltips */
+      .tooltip, [role="tooltip"] {
+        background-color: hsl(var(--popover)) !important;
+        color: hsl(var(--popover-foreground)) !important;
+        border: 1px solid hsl(var(--border)) !important;
+      }
+
+      /* Override dropdown menus */
+      .dropdown, .menu, [role="menu"] {
+        background-color: hsl(var(--popover)) !important;
+        border: 1px solid hsl(var(--border)) !important;
+      }
+
+      .dropdown-item:hover, .menu-item:hover, [role="menuitem"]:hover {
+        background-color: hsl(var(--accent)) !important;
+      }
+
+      /* Override Upptime history page elements */
+      .history .timeline {
+        border-left-color: hsl(var(--border)) !important;
+      }
+
+      .history .event {
+        background-color: hsl(var(--card)) !important;
+        border-color: hsl(var(--border)) !important;
+      }
+
+      .history .event.up {
+        border-left-color: hsl(var(--success)) !important;
+      }
+
+      .history .event.down {
+        border-left-color: hsl(var(--destructive)) !important;
+      }
+
+      .history .event.degraded {
+        border-left-color: hsl(var(--warning)) !important;
+      }
+
+      /* Override time/date displays */
+      time, .time, .date, .timestamp {
+        color: hsl(var(--muted-foreground)) !important;
+      }
+
+      /* Override separator/divider lines */
+      hr, .divider, .separator {
+        border-color: hsl(var(--border)) !important;
+        background-color: hsl(var(--border)) !important;
+      }
+
+      /* Override pill/chip elements */
+      .pill, .chip {
+        background-color: hsl(var(--muted)) !important;
+        color: hsl(var(--foreground)) !important;
+        border: 1px solid hsl(var(--border)) !important;
+      }
+
+      /* Override notification/banner styles */
+      .notification, .banner {
+        background-color: hsl(var(--card)) !important;
+        border: 1px solid hsl(var(--border)) !important;
+      }
+
+      .notification.info, .banner.info {
+        border-left-color: hsl(var(--info)) !important;
+        background-color: hsl(var(--info) / 0.05) !important;
+      }
+
+      /* Override icon colors */
+      .icon {
+        color: hsl(var(--foreground)) !important;
+      }
+
+      .icon.success {
+        color: hsl(var(--success)) !important;
+      }
+
+      .icon.warning {
+        color: hsl(var(--warning)) !important;
+      }
+
+      .icon.error, .icon.danger {
+        color: hsl(var(--destructive)) !important;
+      }
+
+      /* Ensure card elements use theme */
+      .card, .panel, .box {
+        background-color: hsl(var(--card)) !important;
+        color: hsl(var(--card-foreground)) !important;
+        border-color: hsl(var(--border)) !important;
+      }
+
+      /* Override specific Upptime class combinations */
+      .status.card, .status-card {
+        background-color: hsl(var(--card)) !important;
+        color: hsl(var(--card-foreground)) !important;
+      }
+
+      /* Override Upptime's default status colors in all contexts */
+      [class*="status-up"], [class*="up-"] {
+        color: hsl(var(--success)) !important;
+      }
+
+      [class*="status-down"], [class*="down-"] {
+        color: hsl(var(--destructive)) !important;
+      }
+
+      [class*="status-degraded"], [class*="degraded-"] {
+        color: hsl(var(--warning)) !important;
+      }
+
+      /* Override Upptime footer if it exists */
+      footer, .footer {
+        background-color: hsl(var(--card)) !important;
+        border-top-color: hsl(var(--border)) !important;
+        color: hsl(var(--muted-foreground)) !important;
+      }
+
+      footer a, .footer a {
+        color: hsl(var(--bopkit-accent)) !important;
+      }
+
+      /* Override navigation elements */
+      nav, .nav, .navbar {
+        background-color: transparent !important;
+      }
+
+      nav a, .nav a, .navbar a {
+        color: hsl(var(--muted-foreground)) !important;
+      }
+
+      nav a:hover, .nav a:hover, .navbar a:hover {
+        color: hsl(var(--foreground)) !important;
+        background-color: hsl(var(--accent)) !important;
+      }
+
+      /* Override any remaining Upptime-specific status colors */
+      .operational {
+        background-color: hsl(var(--success) / 0.15) !important;
+        color: hsl(var(--success)) !important;
+      }
+
+      .partial-outage {
+        background-color: hsl(var(--warning) / 0.15) !important;
+        color: hsl(var(--warning)) !important;
+      }
+
+      .major-outage {
+        background-color: hsl(var(--destructive) / 0.15) !important;
+        color: hsl(var(--destructive)) !important;
+      }
+
+      /* Override Upptime graph elements */
+      .graph img, .chart img {
+        border: 1px solid hsl(var(--border)) !important;
+        border-radius: calc(var(--radius) - 4px) !important;
+      }
+
+      /* Override Upptime's response time indicators */
+      .response-time-badge {
+        background-color: hsl(var(--muted)) !important;
+        color: hsl(var(--foreground)) !important;
+        border: 1px solid hsl(var(--border)) !important;
+      }
+
+      /* Override Upptime's uptime percentage text */
+      .uptime-percent {
+        color: hsl(var(--foreground)) !important;
+        font-weight: 700 !important;
+      }
+
+      /* Specific overrides for Upptime's generated HTML structure */
+      .summary {
+        color: hsl(var(--foreground)) !important;
+      }
+
+      .site-name {
+        color: hsl(var(--foreground)) !important;
+      }
+
+      .site-url {
+        color: hsl(var(--muted-foreground)) !important;
+      }
+
+      /* Override default focus rings with theme color */
+      *:focus, *:focus-visible {
+        outline-color: hsl(var(--ring)) !important;
       }
     </style>
 
