@@ -29,7 +29,7 @@ status-website:
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap
 
-  customHeadHtml: |
+  customBodyHtml: |
     <style>
       /* Force hide Upptime's default navigation - be very aggressive */
       body > div > div > nav:not([aria-label="Bopkit links"]),
@@ -52,8 +52,6 @@ status-website:
         display: none !important;
       }
     </style>
-
-  customBodyHtml: |
     <div id="bopkit-topbar" role="navigation" aria-label="Bopkit links">
       <a href="https://www.bopkit.com">Bopkit Home</a>
       <a href="https://www.bopkit.com/support">Support</a>
