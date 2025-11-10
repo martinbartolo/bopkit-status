@@ -66,7 +66,7 @@ status-website:
         box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.02);
       }
       #bopkit-topbar a {
-        color: hsl(222.2 47.4% 35%);
+        color: var(--body-text-color);
         text-decoration: none;
         font-weight: 600;
         font-size: 0.9375rem;
@@ -81,7 +81,7 @@ status-website:
         color: var(--body-text-color);
       }
       #bopkit-topbar a:active {
-        transform: scale(0.97);
+        transform: scale(0.98);
       }
       #bopkit-topbar a:focus-visible {
         outline: 2px solid var(--nav-current-border-bottom-color);
@@ -173,31 +173,8 @@ status-website:
       }
       
       /* Time range selector styling */
-      form[role="form"] {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-      }
       form label {
         cursor: pointer;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        border: 1px solid hsl(214.3 31.8% 91.4%);
-        background: var(--card-background-color);
-        font-size: 0.875rem;
-        font-weight: 500;
-        transition: all 0.15s ease;
-        color: hsl(222.2 47.4% 40%);
-      }
-      form label:hover {
-        border-color: hsl(214.3 31.8% 80%);
-        background: hsl(214.3 31.8% 97%);
-      }
-      form input[type="radio"]:checked + label {
-        background: var(--nav-current-border-bottom-color);
-        color: white;
-        border-color: var(--nav-current-border-bottom-color);
       }
       
       /* Graph improvements */
