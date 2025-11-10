@@ -1,4 +1,5 @@
 owner: martinbartolo
+
 repo: bopkit-status
 
 sites:
@@ -19,7 +20,6 @@ status-website:
   introTitle: "**Bopkit** Service Status"
   introMessage: Real-time monitoring of all Bopkit services. Check here for current system status and incident history.
   themeUrl: /assets/status-theme.css
-
   links:
     - rel: preconnect
       href: https://fonts.googleapis.com
@@ -28,7 +28,6 @@ status-website:
       crossorigin: true
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap
-
   customBodyHtml: |
     <style>
       /* Force hide Upptime's default navigation - be very aggressive */
@@ -60,92 +59,221 @@ status-website:
         display: flex;
         gap: 1.5rem;
         align-items: center;
-        padding: 0.875rem 1.5rem;
+        padding: 1rem 1.5rem;
         margin-bottom: 3rem;
         background: var(--body-background-color);
+        border-bottom: 1px solid hsl(214.3 31.8% 91.4%);
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.02);
       }
-
       #bopkit-topbar a {
-        color: var(--body-text-color);
+        color: hsl(222.2 47.4% 35%);
         text-decoration: none;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.9375rem;
         line-height: 1.25rem;
-        padding: 0.5rem 0.875rem;
-        border-radius: 0.375rem;
-        transition: all 0.2s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
       }
-
       #bopkit-topbar a:hover {
-        background-color: hsl(214.3 31.8% 95%);
-        color: hsl(222.2 47.4% 11.2%);
+        background-color: hsl(214.3 31.8% 96%);
+        color: var(--body-text-color);
       }
-
       #bopkit-topbar a:active {
-        transform: scale(0.98);
+        transform: scale(0.97);
       }
-
-      /* Keyboard focus for accessibility */
       #bopkit-topbar a:focus-visible {
         outline: 2px solid var(--nav-current-border-bottom-color);
         outline-offset: 2px;
+        border-radius: 0.5rem;
       }
-
+      
+      /* Main content wrapper */
+      main {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem 3rem;
+      }
+      
       /* Intro banner improvements */
       [role="banner"] {
-        margin-bottom: 2.5rem;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid hsl(214.3 31.8% 91.4%);
       }
-
       [role="banner"] h1 {
-        font-size: 2.25rem;
-        line-height: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
+        font-size: 2.5rem;
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: var(--body-text-color);
+        letter-spacing: -0.025em;
       }
-
       [role="banner"] p {
         font-size: 1.125rem;
         line-height: 1.75rem;
-        color: hsl(222.2 47.4% 35%);
+        color: hsl(222.2 47.4% 40%);
         max-width: 48rem;
+        font-weight: 400;
       }
-
+      
       /* Status card improvements */
       article {
-        border-radius: 0.5rem;
+        border-radius: 0.75rem;
         border: 1px solid hsl(214.3 31.8% 91.4%);
-        transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--card-background-color);
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.02);
       }
-
       article:hover {
         border-color: hsl(214.3 31.8% 85%);
-        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+        transform: translateY(-1px);
       }
-
+      
+      /* Service title styling */
+      article h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--body-text-color);
+        letter-spacing: -0.01em;
+      }
+      article h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+      article h3 a:hover {
+        color: hsl(222.2 47.4% 30%);
+      }
+      
+      /* Status badges */
+      article [class*="tag"] {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        padding: 0.25rem 0.625rem;
+        border-radius: 0.375rem;
+        letter-spacing: 0.01em;
+      }
+      
       /* Section headings */
       section > h2 {
         font-size: 1.5rem;
         line-height: 2rem;
-        font-weight: 600;
-        margin-bottom: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--body-text-color);
+        letter-spacing: -0.02em;
       }
-
+      
+      /* Live Status section */
+      section h2:first-of-type {
+        margin-top: 3rem;
+      }
+      
+      /* Time range selector styling */
+      form[role="form"] {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+      form label {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid hsl(214.3 31.8% 91.4%);
+        background: var(--card-background-color);
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.15s ease;
+        color: hsl(222.2 47.4% 40%);
+      }
+      form label:hover {
+        border-color: hsl(214.3 31.8% 80%);
+        background: hsl(214.3 31.8% 97%);
+      }
+      form input[type="radio"]:checked + label {
+        background: var(--nav-current-border-bottom-color);
+        color: white;
+        border-color: var(--nav-current-border-bottom-color);
+      }
+      
+      /* Graph improvements */
+      svg {
+        border-radius: 0.5rem;
+      }
+      
+      /* Response time and uptime metrics */
+      article p {
+        font-size: 0.9375rem;
+        color: hsl(222.2 47.4% 45%);
+        font-weight: 500;
+      }
+      article strong {
+        color: var(--body-text-color);
+        font-weight: 600;
+      }
+      
       /* Footer improvements */
       [role="contentinfo"] {
         margin-top: 4rem;
-        padding-top: 2rem;
+        padding: 2rem 1.5rem;
         border-top: 1px solid hsl(214.3 31.8% 91.4%);
+        text-align: center;
+      }
+      [role="contentinfo"] p {
         font-size: 0.875rem;
-        color: hsl(222.2 47.4% 35%);
+        color: hsl(222.2 47.4% 45%);
+        font-weight: 500;
+      }
+      
+      /* Responsive improvements */
+      @media (max-width: 640px) {
+        #bopkit-topbar {
+          padding: 0.875rem 1rem;
+          gap: 1rem;
+        }
+        #bopkit-topbar a {
+          padding: 0.375rem 0.75rem;
+          font-size: 0.875rem;
+        }
+        [role="banner"] h1 {
+          font-size: 2rem;
+        }
+        [role="banner"] p {
+          font-size: 1rem;
+        }
+        main {
+          padding: 0 1rem 2rem;
+        }
+      }
+      
+      /* Loading states */
+      [aria-busy="true"] {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+      
+      /* Accessibility improvements */
+      :focus-visible {
+        outline: 2px solid var(--nav-current-border-bottom-color);
+        outline-offset: 2px;
+      }
+      
+      /* Smooth transitions for theme changes */
+      * {
+        transition-property: background-color, border-color, color;
+        transition-duration: 0.15s;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
     </style>
     <div id="bopkit-topbar" role="navigation" aria-label="Bopkit links">
       <a href="https://www.bopkit.com">Bopkit</a>
       <a href="https://www.bopkit.com/support">Support</a>
     </div>
-
   navbar: []
-
   metaTags:
     - name: "color-scheme"
       content: "light"
