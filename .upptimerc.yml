@@ -51,6 +51,46 @@ status-website:
       nav a[href="#"] {
         display: none !important;
       }
+      
+      /* Custom topbar styling */
+      #bopkit-topbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        padding: 0.875rem 1.5rem;
+        background: var(--body-background-color);
+        border-bottom: 1px solid var(--card-border-color);
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      }
+
+      #bopkit-topbar a {
+        color: var(--body-text-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        padding: 0.5rem 0.875rem;
+        border-radius: 0.375rem;
+        transition: all 0.2s ease;
+      }
+
+      #bopkit-topbar a:hover {
+        background-color: hsl(214.3 31.8% 95%);
+        color: hsl(222.2 47.4% 11.2%);
+      }
+
+      #bopkit-topbar a:active {
+        transform: scale(0.98);
+      }
+
+      /* Keyboard focus for accessibility */
+      #bopkit-topbar a:focus-visible {
+        outline: 2px solid var(--nav-current-border-bottom-color);
+        outline-offset: 2px;
+      }
     </style>
     <div id="bopkit-topbar" role="navigation" aria-label="Bopkit links">
       <a href="https://www.bopkit.com">Bopkit Home</a>
