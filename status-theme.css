@@ -41,9 +41,12 @@ html {
   color-scheme: light !important;
 }
 
-/* Hide the default Upptime header/navbar with logo */
+/* Hide ALL default navigation (keep only our custom topbar) */
 header,
+body nav:not([aria-label="Bopkit links"]),
 nav[role="navigation"]:not(#bopkit-topbar),
+nav[class*="svelte-"],
+header[class*="svelte-"],
 .navbar,
 .App-nav,
 .nav,
@@ -51,9 +54,17 @@ nav.container {
   display: none !important;
 }
 
-/* Ensure any navigation container with logo is hidden */
-body > div > div > nav:not([aria-label="Bopkit links"]) {
+/* Remove any brand/logo link that points to root */
+nav a[href="/"],
+[role="navigation"] a[href="/"] {
   display: none !important;
+}
+
+/* Reset any top offsets reserved for default header */
+body,
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Minimal top bar (customBodyHtml) */
@@ -62,9 +73,9 @@ body > div > div > nav:not([aria-label="Bopkit links"]) {
   top: 0;
   z-index: 1000;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.875rem 1.5rem;
   background: var(--body-background-color);
   border-bottom: 1px solid var(--card-border-color);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
@@ -74,8 +85,9 @@ body > div > div > nav:not([aria-label="Bopkit links"]) {
   color: var(--body-text-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9375rem;
-  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.875rem;
   border-radius: 0.375rem;
   transition: all 0.2s ease;
 }
@@ -87,4 +99,10 @@ body > div > div > nav:not([aria-label="Bopkit links"]) {
 
 #bopkit-topbar a:active {
   transform: scale(0.98);
+}
+
+/* Keyboard focus for accessibility */
+#bopkit-topbar a:focus-visible {
+  outline: 2px solid var(--nav-current-border-bottom-color);
+  outline-offset: 2px;
 }
