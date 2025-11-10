@@ -41,25 +41,6 @@ html {
   color-scheme: light !important;
 }
 
-/* Hide ALL default navigation (keep only our custom topbar) */
-header,
-body nav:not([aria-label="Bopkit links"]),
-nav[role="navigation"]:not(#bopkit-topbar),
-nav[class*="svelte-"],
-header[class*="svelte-"],
-.navbar,
-.App-nav,
-.nav,
-nav.container {
-  display: none !important;
-}
-
-/* Remove any brand/logo link that points to root */
-nav a[href="/"],
-[role="navigation"] a[href="/"] {
-  display: none !important;
-}
-
 /* Reset any top offsets reserved for default header */
 body,
 main {
