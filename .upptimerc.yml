@@ -39,7 +39,7 @@ status-website:
 
   metaTags:
     - name: "color-scheme"
-      content: "light dark"
+      content: "light"
     - name: description
       content: Real-time status monitoring for Bopkit services. Check here for current system status and incident history.
     - name: theme-color
@@ -65,4 +65,4 @@ skipTopicsUpdate: true
 skipHomepageUpdate: true
 
 i18n:
-  footer: "© 2025 Bopkit. All rights reserved. This page is [open source](https://github.com/martinbartolo/bopkit-status), powered by [Upptime](https://upptime.js.org)"
+  footer: "© 2025 Bopkit. All rights reserved."
