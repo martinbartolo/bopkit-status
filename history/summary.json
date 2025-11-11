@@ -1,38 +1,242 @@
 [
   {
-    "name": "Bopkit Main Site",
-    "url": "https://www.bopkit.com",
-    "icon": "https://www.bopkit.com/favicon.ico",
-    "slug": "bopkit-main-site",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 683,
-    "timeDay": 611,
-    "timeWeek": 683,
-    "timeMonth": 683,
-    "timeYear": 683,
-    "dailyMinutesDown": {}
+    "name": "System Health",
+    "url": "https://www.bopkit.com/api/healthz",
+    "icon": "✅",
+    "slug": "system-health",
+    "status": "down",
+    "uptime": "0.10%",
+    "uptimeDay": "0.10%",
+    "uptimeWeek": "0.10%",
+    "uptimeMonth": "0.10%",
+    "uptimeYear": "0.10%",
+    "time": 280,
+    "timeDay": 280,
+    "timeWeek": 280,
+    "timeMonth": 280,
+    "timeYear": 280,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
   },
   {
-    "name": "Bopkit Robots",
-    "url": "https://www.bopkit.com/robots.txt",
-    "icon": "https://www.bopkit.com/favicon.ico",
-    "slug": "bopkit-robots",
+    "name": "Service Readiness",
+    "url": "https://www.bopkit.com/api/readyz",
+    "icon": "🚀",
+    "slug": "service-readiness",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 24,
+    "timeDay": 24,
+    "timeWeek": 24,
+    "timeMonth": 24,
+    "timeYear": 24,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Database",
+    "url": "https://www.bopkit.com/api/status/database",
+    "icon": "🗄️",
+    "slug": "database",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 11,
+    "timeDay": 11,
+    "timeWeek": 11,
+    "timeMonth": 11,
+    "timeYear": 11,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Email Notifications",
+    "url": "https://www.bopkit.com/api/status/email",
+    "icon": "📧",
+    "slug": "email-notifications",
+    "status": "down",
+    "uptime": "1.83%",
+    "uptimeDay": "1.83%",
+    "uptimeWeek": "1.83%",
+    "uptimeMonth": "1.83%",
+    "uptimeYear": "1.83%",
+    "time": 20,
+    "timeDay": 20,
+    "timeWeek": 20,
+    "timeMonth": 20,
+    "timeYear": 20,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Video Processing",
+    "url": "https://www.bopkit.com/api/status/ffmpeg",
+    "icon": "🎥",
+    "slug": "video-processing",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 11,
+    "timeDay": 11,
+    "timeWeek": 11,
+    "timeMonth": 11,
+    "timeYear": 11,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Website",
+    "url": "https://www.bopkit.com/api/status/frontend",
+    "icon": "🌐",
+    "slug": "website",
+    "status": "down",
+    "uptime": "3.07%",
+    "uptimeDay": "3.07%",
+    "uptimeWeek": "3.07%",
+    "uptimeMonth": "3.07%",
+    "uptimeYear": "3.07%",
+    "time": 12,
+    "timeDay": 12,
+    "timeWeek": 12,
+    "timeMonth": 12,
+    "timeYear": 12,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Sign In / Authentication",
+    "url": "https://www.bopkit.com/api/status/google-auth",
+    "icon": "🔑",
+    "slug": "sign-in-authentication",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 16,
+    "timeDay": 16,
+    "timeWeek": 16,
+    "timeMonth": 16,
+    "timeYear": 16,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Background Jobs",
+    "url": "https://www.bopkit.com/api/status/inngest",
+    "icon": "🔄",
+    "slug": "background-jobs",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 14,
+    "timeDay": 14,
+    "timeWeek": 14,
+    "timeMonth": 14,
+    "timeYear": 14,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Payment Processing",
+    "url": "https://www.bopkit.com/api/status/paypal",
+    "icon": "💳",
+    "slug": "payment-processing",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 12,
+    "timeDay": 12,
+    "timeWeek": 12,
+    "timeMonth": 12,
+    "timeYear": 12,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Image Processing",
+    "url": "https://www.bopkit.com/api/status/sharp",
+    "icon": "🎨",
+    "slug": "image-processing",
     "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 37,
-    "timeDay": 19,
-    "timeWeek": 37,
-    "timeMonth": 37,
-    "timeYear": 37,
-    "dailyMinutesDown": {}
+    "uptime": "5.20%",
+    "uptimeDay": "5.20%",
+    "uptimeWeek": "5.20%",
+    "uptimeMonth": "5.20%",
+    "uptimeYear": "5.20%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "Storage & Media",
+    "url": "https://www.bopkit.com/api/status/supabase",
+    "icon": "💾",
+    "slug": "storage-and-media",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 14,
+    "timeDay": 14,
+    "timeWeek": 14,
+    "timeMonth": 14,
+    "timeYear": 14,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
+  },
+  {
+    "name": "YouTube Integration",
+    "url": "https://www.bopkit.com/api/status/youtube",
+    "icon": "📹",
+    "slug": "you-tube-integration",
+    "status": "down",
+    "uptime": "6.14%",
+    "uptimeDay": "6.14%",
+    "uptimeWeek": "6.14%",
+    "uptimeMonth": "6.14%",
+    "uptimeYear": "6.14%",
+    "time": 20,
+    "timeDay": 20,
+    "timeWeek": 20,
+    "timeMonth": 20,
+    "timeYear": 20,
+    "dailyMinutesDown": {
+      "2025-11-11": 0
+    }
   }
 ]
