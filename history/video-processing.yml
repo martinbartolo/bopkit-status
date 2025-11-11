@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/ffmpeg
-status: down
-code: 404
-responseTime: 11
-lastUpdated: 2025-11-11T17:25:02.675Z
+status: up
+code: 200
+responseTime: 414
+lastUpdated: 2025-11-11T17:43:48.780Z
 startTime: 2025-11-11T17:25:02.637Z
 generator: Upptime <https://github.com/upptime/upptime>
