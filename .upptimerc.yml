@@ -3,14 +3,57 @@ owner: martinbartolo
 repo: bopkit-status
 
 sites:
-  - name: Bopkit Main Site
-    url: https://www.bopkit.com
-    icon: https://www.bopkit.com/favicon.ico
-    maxResponseTime: 3000
-  - name: Bopkit Robots
-    url: https://www.bopkit.com/robots.txt
-    icon: https://www.bopkit.com/favicon.ico
+  # Health & Readiness checks
+  - name: System Health
+    url: https://www.bopkit.com/api/healthz
+    icon: ✅
     maxResponseTime: 2000
+  - name: Service Readiness
+    url: https://www.bopkit.com/api/readyz
+    icon: 🚀
+    maxResponseTime: 3000
+
+  # Component status checks
+  - name: Database
+    url: https://www.bopkit.com/api/status/database
+    icon: 🗄️
+    maxResponseTime: 3000
+  - name: Email Notifications
+    url: https://www.bopkit.com/api/status/email
+    icon: 📧
+    maxResponseTime: 3000
+  - name: Video Processing
+    url: https://www.bopkit.com/api/status/ffmpeg
+    icon: 🎥
+    maxResponseTime: 2000
+  - name: Website
+    url: https://www.bopkit.com/api/status/frontend
+    icon: 🌐
+    maxResponseTime: 6000
+  - name: Sign In / Authentication
+    url: https://www.bopkit.com/api/status/google-auth
+    icon: 🔑
+    maxResponseTime: 3000
+  - name: Background Jobs
+    url: https://www.bopkit.com/api/status/inngest
+    icon: 🔄
+    maxResponseTime: 3000
+  - name: Payment Processing
+    url: https://www.bopkit.com/api/status/paypal
+    icon: 💳
+    maxResponseTime: 3000
+  - name: Image Processing
+    url: https://www.bopkit.com/api/status/sharp
+    icon: 🎨
+    maxResponseTime: 2000
+  - name: Storage & Media
+    url: https://www.bopkit.com/api/status/supabase
+    icon: 💾
+    maxResponseTime: 3000
+  - name: YouTube Integration
+    url: https://www.bopkit.com/api/status/youtube
+    icon: 📹
+    maxResponseTime: 3000
 
 status-website:
   cname: status.bopkit.com
