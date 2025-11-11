@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/google-auth
-status: down
-code: 404
-responseTime: 16
-lastUpdated: 2025-11-11T17:25:06.394Z
+status: up
+code: 200
+responseTime: 173
+lastUpdated: 2025-11-11T17:43:56.677Z
 startTime: 2025-11-11T17:25:06.354Z
 generator: Upptime <https://github.com/upptime/upptime>
