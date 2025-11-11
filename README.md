@@ -8,19 +8,33 @@ Real-time status and uptime monitoring for Bopkit services.
 
 ### What We Monitor
 
-- **Platform Availability** - Main website and application
-- **Payment Processing** - Checkout and transaction systems
-- **User Services** - Authentication and profiles
-- **Media Delivery** - Streaming and content delivery
-- **External Dependencies** - Third-party service status
+This repository monitors the health and availability of all critical Bopkit services through automated uptime checks:
+
+#### 🏥 Health & Readiness Checks
+
+- **✅ System Health** - Overall system health endpoint (`/api/healthz`)
+- **🚀 Service Readiness** - Service readiness and availability (`/api/readyz`)
+
+#### 🛠️ Core Components
+
+- **🗄️ Database** - Database connectivity and performance
+- **📧 Email Notifications** - Email service functionality
+- **🎥 Video Processing** - FFmpeg video processing capabilities
+- **🌐 Website** - Frontend application availability
+- **🔑 Sign In / Authentication** - Google OAuth authentication services
+- **🔄 Background Jobs** - Inngest background job processing
+- **💳 Payment Processing** - PayPal payment integration
+- **🎨 Image Processing** - Sharp image manipulation services
+- **💾 Storage & Media** - Supabase storage and media delivery
+- **📹 YouTube Integration** - YouTube API integration
 
 ### About
 
-This status page is powered by [Upptime](https://upptime.js.org) and provides real-time monitoring, historical uptime data, and incident tracking for all Bopkit services.
+This status page uses GitHub Actions to automatically monitor service endpoints and update the status page. All monitoring data is stored in this repository, providing full transparency and historical tracking.
 
 ---
 
-**[← Back to Bopkit](https://www.bopkit.com)** | **[Support](https://www.bopkit.com/support)**
+**[Bopkit](https://www.bopkit.com)** | **[Support](https://www.bopkit.com/support)**
 
 ## License
 
