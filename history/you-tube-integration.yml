@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/youtube
-status: down
-code: 404
-responseTime: 20
-lastUpdated: 2025-11-11T17:25:16.416Z
+status: up
+code: 200
+responseTime: 182
+lastUpdated: 2025-11-11T17:44:11.714Z
 startTime: 2025-11-11T17:25:16.349Z
 generator: Upptime <https://github.com/upptime/upptime>
