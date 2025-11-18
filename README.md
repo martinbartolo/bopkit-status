@@ -36,8 +36,4 @@ This status page uses GitHub Actions to automatically monitor service endpoints 
 
 **[Bopkit](https://www.bopkit.com)** | **[Support](https://www.bopkit.com/support)**
 
-## License
-
 © 2025 Bopkit. All rights reserved.
-
-This repository and its configuration are proprietary. The status page is provided for informational purposes only. No part of this repository may be copied, modified, or distributed without explicit permission from Bopkit.
