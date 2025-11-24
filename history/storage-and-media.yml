@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/supabase
-status: down
-code: 503
-responseTime: 211
-lastUpdated: 2025-11-24T09:36:18.621Z
+status: up
+code: 200
+responseTime: 472
+lastUpdated: 2025-11-24T09:55:11.121Z
 startTime: 2025-11-11T17:25:14.366Z
 generator: Upptime <https://github.com/upptime/upptime>
