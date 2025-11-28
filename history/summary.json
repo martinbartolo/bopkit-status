@@ -4,9 +4,9 @@
     "url": "https://www.bopkit.com/api/healthz",
     "icon": "✅",
     "slug": "system-health",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -15,16 +15,18 @@
     "timeWeek": 867,
     "timeMonth": 931,
     "timeYear": 931,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   },
   {
     "name": "Service Readiness",
     "url": "https://www.bopkit.com/api/readyz",
     "icon": "🚀",
     "slug": "service-readiness",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -33,16 +35,18 @@
     "timeWeek": 333,
     "timeMonth": 338,
     "timeYear": 338,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   },
   {
     "name": "Database",
     "url": "https://www.bopkit.com/api/status/database",
     "icon": "🗄️",
     "slug": "database",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -51,16 +55,18 @@
     "timeWeek": 115,
     "timeMonth": 99,
     "timeYear": 99,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   },
   {
     "name": "Email Notifications",
     "url": "https://www.bopkit.com/api/status/email",
     "icon": "📧",
     "slug": "email-notifications",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -69,14 +75,16 @@
     "timeWeek": 202,
     "timeMonth": 186,
     "timeYear": 186,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   },
   {
     "name": "Video Processing",
     "url": "https://www.bopkit.com/api/status/ffmpeg",
     "icon": "🎥",
     "slug": "video-processing",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -94,7 +102,7 @@
     "url": "https://www.bopkit.com/api/status/frontend",
     "icon": "🌐",
     "slug": "website",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -112,7 +120,7 @@
     "url": "https://www.bopkit.com/api/status/google-auth",
     "icon": "🔑",
     "slug": "sign-in-authentication",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -131,18 +139,18 @@
     "icon": "🔄",
     "slug": "background-jobs",
     "status": "down",
-    "uptime": "86.07%",
+    "uptime": "82.32%",
     "uptimeDay": "0.00%",
-    "uptimeWeek": "67.58%",
-    "uptimeMonth": "86.07%",
-    "uptimeYear": "86.07%",
+    "uptimeWeek": "56.97%",
+    "uptimeMonth": "82.32%",
+    "uptimeYear": "82.32%",
     "time": 188,
     "timeDay": 223,
     "timeWeek": 200,
     "timeMonth": 188,
     "timeYear": 188,
     "dailyMinutesDown": {
-      "2025-11-28": 26,
+      "2025-11-28": 1095,
       "2025-11-27": 1440,
       "2025-11-26": 1440,
       "2025-11-25": 362
@@ -153,9 +161,9 @@
     "url": "https://www.bopkit.com/api/status/paypal",
     "icon": "💳",
     "slug": "payment-processing",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -164,16 +172,18 @@
     "timeWeek": 276,
     "timeMonth": 293,
     "timeYear": 293,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   },
   {
     "name": "Image Processing",
     "url": "https://www.bopkit.com/api/status/sharp",
     "icon": "🎨",
     "slug": "image-processing",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -182,16 +192,18 @@
     "timeWeek": 167,
     "timeMonth": 160,
     "timeYear": 160,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   },
   {
     "name": "Storage & Media",
     "url": "https://www.bopkit.com/api/status/supabase",
     "icon": "💾",
     "slug": "storage-and-media",
-    "status": "up",
+    "status": "down",
     "uptime": "99.92%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "99.81%",
     "uptimeMonth": "99.92%",
     "uptimeYear": "99.92%",
@@ -201,6 +213,7 @@
     "timeMonth": 379,
     "timeYear": 379,
     "dailyMinutesDown": {
+      "2025-11-28": 0,
       "2025-11-24": 19
     }
   },
@@ -209,9 +222,9 @@
     "url": "https://www.bopkit.com/api/status/youtube",
     "icon": "📹",
     "slug": "you-tube-integration",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -220,6 +233,8 @@
     "timeWeek": 170,
     "timeMonth": 148,
     "timeYear": 148,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-11-28": 0
+    }
   }
 ]
