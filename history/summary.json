@@ -4,9 +4,9 @@
     "url": "https://www.bopkit.com/api/healthz",
     "icon": "✅",
     "slug": "system-health",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -16,6 +16,7 @@
     "timeMonth": 983,
     "timeYear": 983,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -24,9 +25,9 @@
     "url": "https://www.bopkit.com/api/readyz",
     "icon": "🚀",
     "slug": "service-readiness",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -36,6 +37,7 @@
     "timeMonth": 337,
     "timeYear": 337,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -44,9 +46,9 @@
     "url": "https://www.bopkit.com/api/status/database",
     "icon": "🗄️",
     "slug": "database",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -56,6 +58,7 @@
     "timeMonth": 99,
     "timeYear": 99,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -64,9 +67,9 @@
     "url": "https://www.bopkit.com/api/status/email",
     "icon": "📧",
     "slug": "email-notifications",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -76,6 +79,7 @@
     "timeMonth": 183,
     "timeYear": 183,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -84,9 +88,9 @@
     "url": "https://www.bopkit.com/api/status/ffmpeg",
     "icon": "🎥",
     "slug": "video-processing",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -96,6 +100,7 @@
     "timeMonth": 167,
     "timeYear": 167,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -104,9 +109,9 @@
     "url": "https://www.bopkit.com/api/status/frontend",
     "icon": "🌐",
     "slug": "website",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -116,6 +121,7 @@
     "timeMonth": 720,
     "timeYear": 720,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -124,9 +130,9 @@
     "url": "https://www.bopkit.com/api/status/google-auth",
     "icon": "🔑",
     "slug": "sign-in-authentication",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -136,6 +142,7 @@
     "timeMonth": 102,
     "timeYear": 102,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -144,18 +151,19 @@
     "url": "https://www.bopkit.com/api/status/inngest",
     "icon": "🔄",
     "slug": "background-jobs",
-    "status": "up",
-    "uptime": "53.37%",
-    "uptimeDay": "54.46%",
-    "uptimeWeek": "7.78%",
-    "uptimeMonth": "53.37%",
-    "uptimeYear": "53.37%",
+    "status": "down",
+    "uptime": "54.59%",
+    "uptimeDay": "99.99%",
+    "uptimeWeek": "18.21%",
+    "uptimeMonth": "54.59%",
+    "uptimeYear": "54.59%",
     "time": 366,
-    "timeDay": 637,
+    "timeDay": 594,
     "timeWeek": 682,
     "timeMonth": 366,
     "timeYear": 366,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-12-08": 683,
       "2025-12-07": 1440,
       "2025-12-06": 1440,
@@ -177,9 +185,9 @@
     "url": "https://www.bopkit.com/api/status/paypal",
     "icon": "💳",
     "slug": "payment-processing",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -189,6 +197,7 @@
     "timeMonth": 348,
     "timeYear": 348,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -197,9 +206,9 @@
     "url": "https://www.bopkit.com/api/status/sharp",
     "icon": "🎨",
     "slug": "image-processing",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -209,6 +218,7 @@
     "timeMonth": 173,
     "timeYear": 173,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   },
@@ -217,10 +227,10 @@
     "url": "https://www.bopkit.com/api/status/supabase",
     "icon": "💾",
     "slug": "storage-and-media",
-    "status": "up",
+    "status": "down",
     "uptime": "99.86%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "99.80%",
+    "uptimeDay": "99.99%",
+    "uptimeWeek": "99.79%",
     "uptimeMonth": "99.86%",
     "uptimeYear": "99.86%",
     "time": 366,
@@ -229,6 +239,7 @@
     "timeMonth": 366,
     "timeYear": 366,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-12-05": 21,
       "2025-11-28": 16,
       "2025-11-24": 19
@@ -239,9 +250,9 @@
     "url": "https://www.bopkit.com/api/status/youtube",
     "icon": "📹",
     "slug": "you-tube-integration",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.96%",
     "uptimeYear": "99.96%",
@@ -251,6 +262,7 @@
     "timeMonth": 155,
     "timeYear": 155,
     "dailyMinutesDown": {
+      "2025-12-09": 0,
       "2025-11-28": 16
     }
   }
