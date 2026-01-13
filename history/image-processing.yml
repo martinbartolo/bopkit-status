@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/sharp
-status: up
+status: degraded
 code: 200
-responseTime: 104
-lastUpdated: 2026-01-12T23:06:58.403Z
+responseTime: 3594
+lastUpdated: 2026-01-13T08:48:26.186Z
 startTime: 2025-11-11T17:25:12.424Z
 generator: Upptime <https://github.com/upptime/upptime>
