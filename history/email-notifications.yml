@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/email
-status: degraded
+status: up
 code: 200
-responseTime: 3412
-lastUpdated: 2026-01-13T08:47:37.951Z
+responseTime: 182
+lastUpdated: 2026-01-13T08:59:21.212Z
 startTime: 2025-11-11T17:25:00.821Z
 generator: Upptime <https://github.com/upptime/upptime>
