@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/paypal
-status: up
-code: 200
-responseTime: 288
-lastUpdated: 2026-01-21T23:10:32.173Z
+status: down
+code: 403
+responseTime: 9
+lastUpdated: 2026-01-22T19:50:33.388Z
 startTime: 2025-11-11T17:25:10.321Z
 generator: Upptime <https://github.com/upptime/upptime>
