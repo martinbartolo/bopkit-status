@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/frontend
-status: down
-code: 403
-responseTime: 13
-lastUpdated: 2026-01-22T19:50:27.714Z
+status: up
+code: 200
+responseTime: 209
+lastUpdated: 2026-01-22T19:58:13.108Z
 startTime: 2025-11-11T17:25:04.466Z
 generator: Upptime <https://github.com/upptime/upptime>
