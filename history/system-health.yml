@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/healthz
-status: down
-code: 403
-responseTime: 74
-lastUpdated: 2026-01-25T17:58:19.510Z
+status: up
+code: 200
+responseTime: 278
+lastUpdated: 2026-01-25T18:12:19.855Z
 startTime: 2025-11-11T17:24:54.892Z
 generator: Upptime <https://github.com/upptime/upptime>
