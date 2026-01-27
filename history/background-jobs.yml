@@ -1,7 +1,7 @@
 url: https://www.bopkit.com/api/status/inngest
-status: degraded
-code: 503
-responseTime: 5099
-lastUpdated: 2026-01-27T14:53:46.826Z
+status: up
+code: 200
+responseTime: 321
+lastUpdated: 2026-01-27T15:05:42.957Z
 startTime: 2025-11-11T17:25:08.255Z
 generator: Upptime <https://github.com/upptime/upptime>
